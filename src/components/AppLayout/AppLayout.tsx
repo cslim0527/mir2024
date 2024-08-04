@@ -19,7 +19,7 @@ const AppLayout = ({ children, isNoScroll = false }: AppLayoutProps) => {
       <VisualBanner />
 
       <Gnb />
-      <main style={{ padding: "0 40px" }}>{children}</main>
+      <main style={{ padding: "0 40px 120px 40px" }}>{children}</main>
     </Wrapper>
   );
 };

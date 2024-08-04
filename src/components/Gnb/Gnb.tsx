@@ -24,7 +24,7 @@ const Gnb = () => {
           <a href="#">커뮤니티</a>
         </li>
       </MainMenu>
-      <SubMenu isDimmedOpen={isDimmedOpen}>
+      <SubMenu $isDimmedOpen={isDimmedOpen}>
         <ul>
           <li>
             <a href="#">공지사항</a>
@@ -79,13 +79,13 @@ const Wrapper = styled.nav`
   margin-bottom: 40px;
 `;
 
-const SubMenu = styled.div<{ isDimmedOpen: boolean }>`
+const SubMenu = styled.div<{ $isDimmedOpen: boolean }>`
   display: flex;
   justify-content: space-between;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   transition: all 0.3s ease;
-  height: ${(props) => (props.isDimmedOpen ? "240px" : 0)};
+  height: ${(props) => (props.$isDimmedOpen ? "240px" : 0)};
   overflow: hidden;
   position: relative;
   z-index: 1;
