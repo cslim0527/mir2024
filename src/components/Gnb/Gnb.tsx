@@ -1,6 +1,7 @@
 import { GNB_HEIGHT } from "@/src/constants/layout";
 import styled from "styled-components";
 import { useGnb } from "./hooks/useGnb";
+import Link from "next/link";
 
 const Gnb = () => {
   const { isDimmedOpen, handleToggleDimmed } = useGnb();
@@ -14,7 +15,7 @@ const Gnb = () => {
           <a href="#">새소식</a>
         </li>
         <li>
-          <a href="#">가이드</a>
+          <Link href="/guide/skills">가이드</Link>
         </li>
         <li>
           <a href="#">문파</a>
