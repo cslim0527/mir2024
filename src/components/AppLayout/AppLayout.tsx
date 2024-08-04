@@ -7,16 +7,19 @@ import Gnb from "../Gnb";
 
 interface AppLayoutProps {
   children: React.ReactNode;
+  isNoScroll?: boolean;
 }
 
-const AppLayout = ({ children }: AppLayoutProps) => {
+const AppLayout = ({ children, isNoScroll = false }: AppLayoutProps) => {
   return (
-    <Wrapper>
+    <Wrapper
+      style={{ maxHeight: isNoScroll ? "100vh" : "auto", minHeight: "100vh" }}
+    >
       <Header />
       <VisualBanner />
 
       <Gnb />
-      {children}
+      <main style={{ padding: "0 40px 120px 40px" }}>{children}</main>
     </Wrapper>
   );
 };
@@ -25,7 +28,6 @@ export default AppLayout;
 
 const Wrapper = styled.main`
   width: 1180px;
-  max-height: 100vh;
   margin: 0 auto;
   padding-top: ${HEADER_HEIGHT}px;
   background: url("/assets/images/bg.jpeg") no-repeat;
