@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 import SkillTable from "./SkillTable";
-import { SKILL_DATA } from "@/src/constants/skill";
+import { SKILL_DATA } from "@/src/data/skill";
 import { useSkill } from "./hooks/useSkill";
 import { Job } from "@/src/types/skill";
 
