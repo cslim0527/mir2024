@@ -32,13 +32,13 @@ const Gnb = () => {
         </ul>
         <ul>
           <li>
-            <a href="#">무공 및 마법</a>
+            <Link href="/guide/skills">무공 및 마법</Link>
           </li>
           <li>
             <a href="#">지도 및 좌표</a>
           </li>
           <li>
-            <a href="#">아이템</a>
+            <Link href="/guide/items">아이템</Link>
           </li>
           <li>
             <a href="#">머리모양</a>
