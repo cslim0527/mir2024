@@ -1,23 +1,23 @@
 "use client";
 
 import styled from "styled-components";
-import SkillTable from "./SkillTable";
-import { SKILL_DATA } from "@/src/data/skill";
-import { useSkill } from "./hooks/useSkill";
+import ItemsTable from "./ItemsTable";
+import { useItems } from "./hooks/useItems";
 import { Job } from "@/src/types/skill";
+import { ITEM_DATA } from "@/src/data/item";
 
-const Skill = () => {
-  const { currentJob, handleChangeJob } = useSkill();
+const Items = () => {
+  const { currentJob, handleChangeJob } = useItems();
   return (
     <div>
       <Tabs>
         <ul>
-          {Object.entries(SKILL_DATA).map((data) => (
+          {Object.entries(ITEM_DATA).map((data) => (
             <li
               className={currentJob === data[0] ? "active" : ""}
               onClick={() => handleChangeJob(data[0] as Job)}
             >
-              {data[1].job}
+              {data[1].type}
             </li>
           ))}
         </ul>
@@ -31,17 +31,17 @@ const Skill = () => {
         }}
       >
         <Title>
-          <img src="/assets/images/icon_skill.gif" alt="" />
-          <span>무공</span>
-          <b>{SKILL_DATA[currentJob].job}</b>
+          <img src="/assets/images/items/light/수우의투구.gif" alt="" />
+          <span>아이템</span>
+          <b>{ITEM_DATA[currentJob].type}</b>
         </Title>
-        <SkillTable data={SKILL_DATA[currentJob].skill} />
+        <ItemsTable data={ITEM_DATA[currentJob].data} type={currentJob} />
       </div>
     </div>
   );
 };
 
-export default Skill;
+export default Items;
 
 const Title = styled.div`
   font-size: 18px;
