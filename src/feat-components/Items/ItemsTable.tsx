@@ -1,7 +1,7 @@
 "use client";
 
 import { Item, ItemType } from "@/src/types/item";
-import { comma } from "@/src/utils/common";
+import { comma, ifErrorNoImg } from "@/src/utils/common";
 import styled from "styled-components";
 
 interface ItemsTableProps {
@@ -32,9 +32,7 @@ const ItemsTable = ({ data, type }: ItemsTableProps) => {
               <img
                 src={`/assets/images/items/${type}/${name}.gif`}
                 alt={name}
-                onError={(e) =>
-                  (e.currentTarget.src = "/assets/images/no_img.gif")
-                }
+                onError={ifErrorNoImg}
               />
             </td>
             <td className="name">{name}</td>

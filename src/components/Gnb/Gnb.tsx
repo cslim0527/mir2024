@@ -41,7 +41,7 @@ const Gnb = () => {
             <Link href="/guide/items">아이템</Link>
           </li>
           <li>
-            <a href="#">머리모양</a>
+            <Link href="/guide/hair">머리모양</Link>
           </li>
           <li>
             <a href="#">몬스터</a>
