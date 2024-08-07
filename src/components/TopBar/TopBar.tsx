@@ -1,11 +1,15 @@
 "use client";
 
-import { HEADER_HEIGHT } from "@/src/constants/layout";
+import Link from "next/link";
 import styled from "styled-components";
+import auth from "@/src/network/auth";
+import { HEADER_HEIGHT } from "@/src/constants/layout";
+import { useAuth } from "@/src/providers/AuthProvider";
 
 interface HeaderProps {}
 
 const TopBar = (props: HeaderProps) => {
+  const { handleLogOut, isAuthenticated } = useAuth();
   return (
     <Wrapper>
       <div>
@@ -20,7 +24,13 @@ const TopBar = (props: HeaderProps) => {
             <a href="#">고객지원</a>
           </li>
           <li>
-            <a href="#">내 계정</a>
+            {isAuthenticated ? (
+              <button type="button" onClick={() => handleLogOut()}>
+                로그아웃
+              </button>
+            ) : (
+              <Link href="/member/login">로그인</Link>
+            )}
           </li>
         </ul>
       </AsideMenus>
