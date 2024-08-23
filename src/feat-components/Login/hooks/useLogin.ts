@@ -30,7 +30,7 @@ export default function useLogin() {
       );
       setIsPending(false);
     }
-  }, [email, password]);
+  }, [email, password, handleLogin]);
 
   const handleChangeEmail = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);

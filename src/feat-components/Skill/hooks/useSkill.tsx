@@ -5,9 +5,12 @@ import { useCallback, useMemo } from "react";
 export const useSkill = () => {
   const { push } = useRouter();
   const params = useSearchParams();
-  const handleChangeJob = useCallback((job: Job) => {
-    push(`/guide/skills?job=${job}`);
-  }, []);
+  const handleChangeJob = useCallback(
+    (job: Job) => {
+      push(`/guide/skills?job=${job}`);
+    },
+    [push]
+  );
 
   const currentJob = useMemo(
     () => (params.get("job") || "fire") as Job,

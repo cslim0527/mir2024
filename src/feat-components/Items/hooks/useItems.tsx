@@ -5,9 +5,12 @@ import { useCallback, useMemo } from "react";
 export const useItems = () => {
   const { push } = useRouter();
   const params = useSearchParams();
-  const handleChangeJob = useCallback((job: ItemType) => {
-    push(`/guide/items?job=${job}`);
-  }, []);
+  const handleChangeJob = useCallback(
+    (job: ItemType) => {
+      push(`/guide/items?job=${job}`);
+    },
+    [push]
+  );
 
   const currentJob = useMemo(
     () => (params.get("job") || "common") as ItemType,

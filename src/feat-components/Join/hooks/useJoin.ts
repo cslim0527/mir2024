@@ -30,7 +30,7 @@ export default function useJoin() {
       );
       setIsPending(false);
     }
-  }, [email, password]);
+  }, [email, password, handleJoin]);
 
   const handleChangeEmail = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);

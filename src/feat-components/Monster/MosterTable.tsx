@@ -2,6 +2,7 @@
 
 import { MONSTER_DATA } from "@/src/data/monster";
 import { comma, ifErrorNoImg } from "@/src/utils/common";
+import Image from "next/image";
 import styled from "styled-components";
 
 const MonsterTable = () => {
@@ -19,7 +20,7 @@ const MonsterTable = () => {
         {MONSTER_DATA.map(({ name, exp, description }, index) => (
           <tr key={`monster-row-${index}`}>
             <td>
-              <img
+              <Image
                 src={`/assets/images/monster/${name}.gif`}
                 alt={name}
                 onError={ifErrorNoImg}

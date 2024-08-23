@@ -5,6 +5,7 @@ import { useMaps } from "./hooks/useMaps";
 import Portal from "@/src/components/Portal";
 import Dimmed from "@/src/components/Dimmed";
 import { ifErrorNoImg } from "@/src/utils/common";
+import Image from "next/image";
 
 interface CastleModalProps {
   src?: string;
@@ -18,7 +19,7 @@ const CastleModal = ({ src, handleToggleModal }: CastleModalProps) => {
       <CloseButton type="button" onClick={() => handleToggleModal(false)}>
         그만보기
       </CloseButton>
-      <img src={src} alt="" onError={(e) => ifErrorNoImg(e, [700, 470])} />
+      <Image src={src} alt="" onError={(e) => ifErrorNoImg(e, [700, 470])} />
     </Modal>
   );
 };

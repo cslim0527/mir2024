@@ -2,6 +2,7 @@
 
 import { Item, ItemType } from "@/src/types/item";
 import { comma, ifErrorNoImg } from "@/src/utils/common";
+import Image from "next/image";
 import styled from "styled-components";
 
 interface ItemsTableProps {
@@ -29,7 +30,7 @@ const ItemsTable = ({ data, type }: ItemsTableProps) => {
         {data.map(({ name, level, acc, def, atk, rep, price, etc }, index) => (
           <tr key={`item-row-${index}`}>
             <td>
-              <img
+              <Image
                 src={`/assets/images/items/${type}/${name}.gif`}
                 alt={name}
                 onError={ifErrorNoImg}

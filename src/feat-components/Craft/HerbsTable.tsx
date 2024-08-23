@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { ifErrorNoImg } from "@/src/utils/common";
 import { HERBS_DATA } from "@/src/data/craft";
+import Image from "next/image";
 
 const HerbsTable = () => {
   return (
@@ -18,7 +19,7 @@ const HerbsTable = () => {
         {HERBS_DATA.map(({ name, description }, index) => (
           <tr key={`potion-row-${index}`}>
             <td>
-              <img
+              <Image
                 src={`/assets/images/crafts/herbs/${name}.gif`}
                 alt=""
                 onError={ifErrorNoImg}

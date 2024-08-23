@@ -14,6 +14,7 @@ const Items = () => {
         <ul>
           {Object.entries(ITEM_DATA).map((data) => (
             <li
+              key={`item-${data[1].type}`}
               className={currentJob === data[0] ? "active" : ""}
               onClick={() => handleChangeJob(data[0] as Job)}
             >

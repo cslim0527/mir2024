@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { ifErrorNoImg } from "@/src/utils/common";
+import Image from "next/image";
 
 const HairTable = () => {
   return (
@@ -29,7 +30,7 @@ const HairTable = () => {
               </td>
               <td>머리모양 {index}</td>
               <td className="hair-view">
-                <img
+                <Image
                   src={`/assets/images/hair/female/${index}.gif`}
                   alt=""
                   onError={ifErrorNoImg}

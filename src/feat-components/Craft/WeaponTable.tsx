@@ -3,6 +3,7 @@
 import styled from "styled-components";
 import { ifErrorNoImg } from "@/src/utils/common";
 import { WEAPON_DATA } from "@/src/data/craft";
+import Image from "next/image";
 
 const WeaponTable = () => {
   return (
@@ -18,7 +19,7 @@ const WeaponTable = () => {
         {WEAPON_DATA.map(({ name, description }, index) => (
           <tr key={`weapon-row-${index}`}>
             <td>
-              <img
+              <Image
                 src={`/assets/images/crafts/weapon/${name}.gif`}
                 alt=""
                 onError={ifErrorNoImg}
