@@ -17,19 +17,26 @@ import React, {
   useMemo,
   useState,
 } from "react";
+import { FirebaseError } from "firebase/app";
+
+export type ErrorResponse = {
+  error: FirebaseError;
+};
 
 export interface AuthContextType {
   isAuthenticated: boolean;
-  handleLogin: (params: LoginParams) => Promise<UserCredential | unknown>;
+  handleLogin: (params: LoginParams) => Promise<UserCredential | ErrorResponse>;
   handleLogOut: () => void;
-  handleJoin: (params: JoinParams) => Promise<UserCredential | unknown>;
+  handleJoin: (params: JoinParams) => Promise<UserCredential | ErrorResponse>;
 }
 
 const AuthContext = createContext<AuthContextType>({
   isAuthenticated: false,
-  handleLogin: async (params: LoginParams) => Promise.resolve({}),
+  handleLogin: async (params: LoginParams) =>
+    Promise.resolve({} as UserCredential),
   handleLogOut: () => {},
-  handleJoin: async (params: JoinParams) => Promise.resolve({}),
+  handleJoin: async (params: JoinParams) =>
+    Promise.resolve({} as UserCredential),
 });
 
 export const useAuth = () => {
@@ -61,7 +68,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       const res = await signInWithEmailAndPassword(auth, email, password);
       return res;
     } catch (error) {
-      return error;
+      return { error } as ErrorResponse;
     }
   }, []);
 
@@ -74,7 +81,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       return res;
     } catch (error) {
-      return error;
+      return { error } as ErrorResponse;
     }
   }, []);
 

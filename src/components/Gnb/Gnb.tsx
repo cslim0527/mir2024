@@ -60,7 +60,7 @@ const Gnb = () => {
         </ul>
         <ul>
           <li>
-            <a href="#">자유게시판</a>
+            <Link href="/community/forum">자유게시판</Link>
           </li>
           <li>
             <a href="#">삽니다/팝니다</a>

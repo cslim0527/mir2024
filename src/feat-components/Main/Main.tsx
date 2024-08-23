@@ -1,11 +1,17 @@
+import Link from "next/link";
 import styled from "styled-components";
 
+const DISCORD_CHANNEL_URL = "https://discord.gg/d3JhG38eTG";
+
 const Main = () => {
+  const handleClickDiscord = () => {
+    window.open(DISCORD_CHANNEL_URL);
+  };
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <Starter>
-          <Discord type="button">
+          <Discord type="button" onClick={handleClickDiscord}>
             <span>디스코드</span>
           </Discord>
           <p>클라이언트 문의는 디스코드로!</p>
@@ -17,7 +23,7 @@ const Main = () => {
             <br />
             로그인이 필요해요!
           </span>
-          <a href="#">로그인</a>
+          <Link href="/member/login">로그인</Link>
         </Login>
       </div>
     </>
