@@ -3,6 +3,7 @@
 import { LineWave } from "react-loader-spinner";
 import useJoin from "./hooks/useJoin";
 import styled from "styled-components";
+import Image from "next/image";
 
 const Join = () => {
   const {
@@ -18,15 +19,31 @@ const Join = () => {
 
   return (
     <Wrapper>
-      <h1
+      <div
         style={{
-          paddingTop: "50px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          paddingTop: "30px",
           paddingBottom: "25px",
-          textAlign: "center",
         }}
       >
-        회원가입
-      </h1>
+        <Image
+          style={{ borderRadius: "6px" }}
+          width={50}
+          height={50}
+          src={`/assets/images/BI.jpg`}
+          alt=""
+        />
+        <h1
+          style={{
+            textAlign: "center",
+            marginTop: "16px",
+          }}
+        >
+          회원가입
+        </h1>
+      </div>
       <div>
         <Input
           style={{ marginBottom: "8px" }}
