@@ -6,7 +6,7 @@ import AuthProvider from "@/src/providers/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "MIR 2024",
+  title: "미르의전설1",
   description: "미르의전설 패왕전의 부활",
 };
 
@@ -17,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
         <div id="portal" />
         <AuthProvider>{children}</AuthProvider>
