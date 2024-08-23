@@ -19,7 +19,7 @@ const HerbsTable = () => {
         {HERBS_DATA.map(({ name, description }, index) => (
           <tr key={`potion-row-${index}`}>
             <td>
-              <Image
+              <img
                 src={`/assets/images/crafts/herbs/${name}.gif`}
                 alt=""
                 onError={ifErrorNoImg}

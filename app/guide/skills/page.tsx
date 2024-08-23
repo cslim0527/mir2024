@@ -1,10 +1,13 @@
 import AppLayout from "@/src/components/AppLayout";
 import Skill from "@/src/feat-components/Skill";
+import { Suspense } from "react";
 
 const SkillsPage = () => {
   return (
     <AppLayout>
-      <Skill />
+      <Suspense>
+        <Skill />
+      </Suspense>
     </AppLayout>
   );
 };

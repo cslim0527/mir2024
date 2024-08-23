@@ -20,7 +20,7 @@ const MonsterTable = () => {
         {MONSTER_DATA.map(({ name, exp, description }, index) => (
           <tr key={`monster-row-${index}`}>
             <td>
-              <Image
+              <img
                 src={`/assets/images/monster/${name}.gif`}
                 alt={name}
                 onError={ifErrorNoImg}

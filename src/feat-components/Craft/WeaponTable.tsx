@@ -19,7 +19,7 @@ const WeaponTable = () => {
         {WEAPON_DATA.map(({ name, description }, index) => (
           <tr key={`weapon-row-${index}`}>
             <td>
-              <Image
+              <img
                 src={`/assets/images/crafts/weapon/${name}.gif`}
                 alt=""
                 onError={ifErrorNoImg}

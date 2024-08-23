@@ -1,10 +1,13 @@
+import { Suspense } from "react";
 import AppLayout from "@/src/components/AppLayout";
 import Items from "@/src/feat-components/Items";
 
 const ItemsPage = () => {
   return (
     <AppLayout>
-      <Items />
+      <Suspense>
+        <Items />
+      </Suspense>
     </AppLayout>
   );
 };

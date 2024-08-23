@@ -30,7 +30,7 @@ const ItemsTable = ({ data, type }: ItemsTableProps) => {
         {data.map(({ name, level, acc, def, atk, rep, price, etc }, index) => (
           <tr key={`item-row-${index}`}>
             <td>
-              <Image
+              <img
                 src={`/assets/images/items/${type}/${name}.gif`}
                 alt={name}
                 onError={ifErrorNoImg}

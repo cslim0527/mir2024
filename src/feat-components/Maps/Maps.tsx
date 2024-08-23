@@ -19,7 +19,7 @@ const CastleModal = ({ src, handleToggleModal }: CastleModalProps) => {
       <CloseButton type="button" onClick={() => handleToggleModal(false)}>
         그만보기
       </CloseButton>
-      <Image src={src} alt="" onError={(e) => ifErrorNoImg(e, [700, 470])} />
+      <img src={src} alt="" onError={(e) => ifErrorNoImg(e, [700, 470])} />
     </Modal>
   );
 };

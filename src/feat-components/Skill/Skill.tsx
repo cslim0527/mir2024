@@ -33,7 +33,7 @@ const Skill = () => {
         }}
       >
         <Title>
-          <Image src="/assets/images/icon_skill.gif" alt="" />
+          <img src="/assets/images/icon_skill.gif" alt="" />
           <span>무공</span>
           <b>{SKILL_DATA[currentJob].job}</b>
         </Title>

@@ -30,7 +30,7 @@ const HairTable = () => {
               </td>
               <td>머리모양 {index}</td>
               <td className="hair-view">
-                <Image
+                <img
                   src={`/assets/images/hair/female/${index}.gif`}
                   alt=""
                   onError={ifErrorNoImg}
