@@ -8,27 +8,27 @@ const Main = () => {
     window.open(DISCORD_CHANNEL_URL);
   };
   return (
-    <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Starter>
-          <Discord type="button" onClick={handleClickDiscord}>
-            <span>디스코드</span>
-          </Discord>
-          <p>클라이언트 문의는 디스코드로!</p>
-        </Starter>
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <Starter>
+        <Discord type="button" onClick={handleClickDiscord}>
+          <span>디스코드</span>
+        </Discord>
+        <p>클라이언트 문의는 디스코드로!</p>
+      </Starter>
 
-        <Login>
-          <span>
-            일부 컨텐츠를 이용하려면
-            <br />
-            로그인이 필요해요!
-          </span>
-          <Link href="/member/login">로그인</Link>
-        </Login>
-      </div>
-    </>
+      <Login>
+        <span>
+          일부 컨텐츠를 이용하려면
+          <br />
+          로그인이 필요해요!
+        </span>
+        <Link href="/member/login">로그인</Link>
+      </Login>
+    </div>
   );
 };
+
+export default Main;
 
 const Starter = styled.div`
   width: 289px;
@@ -94,5 +94,3 @@ const Login = styled.div`
     background-color: #a28c6d;
   }
 `;
-
-export default Main;
