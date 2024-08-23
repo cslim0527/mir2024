@@ -35,7 +35,7 @@ const Gnb = () => {
             <Link href="/guide/skills">무공 및 마법</Link>
           </li>
           <li>
-            <a href="#">지도 및 좌표</a>
+            <Link href="/guide/maps">지도 및 좌표</Link>
           </li>
           <li>
             <Link href="/guide/items">아이템</Link>
