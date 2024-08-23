@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import styled from "styled-components";
-import auth from "@/src/network/auth";
 import { HEADER_HEIGHT } from "@/src/constants/layout";
 import { useAuth } from "@/src/providers/AuthProvider";
 
@@ -14,15 +13,12 @@ const TopBar = (props: HeaderProps) => {
     <Wrapper>
       <div>
         <h1>
-          <a href="#">미르2024</a>
+          <a href="/">미르2024</a>
         </h1>
       </div>
 
       <AsideMenus>
         <ul>
-          <li>
-            <a href="#">고객지원</a>
-          </li>
           <li>
             {isAuthenticated ? (
               <button type="button" onClick={() => handleLogOut()}>
