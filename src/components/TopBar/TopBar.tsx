@@ -21,9 +21,9 @@ const TopBar = (props: HeaderProps) => {
         <ul>
           <li>
             {isAuthenticated ? (
-              <button type="button" onClick={() => handleLogOut()}>
+              <LogoutButton type="button" onClick={handleLogOut}>
                 로그아웃
-              </button>
+              </LogoutButton>
             ) : (
               <Link href="/member/login">로그인</Link>
             )}
@@ -71,4 +71,17 @@ const AsideMenus = styled.div`
     display: flex;
     gap: 10px;
   }
+`;
+
+const LogoutButton = styled.button`
+  border: 0;
+  background-color: transparent;
+  color: #ffffffb3;
+  font-size: 14px;
+  font-weight: normal;
+
+  &:hover {
+    color: #ffffff;
+  }
+  cursor: pointer;
 `;

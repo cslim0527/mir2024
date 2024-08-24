@@ -9,11 +9,11 @@ const Join = () => {
   const {
     errors,
     email,
-    password,
+    // password,
     isPending,
     isDisable,
     handleChangeEmail,
-    handleChangePassword,
+    // handleChangePassword,
     handleSubmit,
   } = useJoin();
 
@@ -53,7 +53,7 @@ const Join = () => {
           onChange={handleChangeEmail}
         />
       </div>
-      <div>
+      {/* <div>
         <Input
           style={{ marginBottom: "16px" }}
           type="password"
@@ -61,7 +61,7 @@ const Join = () => {
           value={password}
           onChange={handleChangePassword}
         />
-      </div>
+      </div> */}
 
       <div>
         <LoginButton type="button" onClick={handleSubmit} disabled={isDisable}>
@@ -82,7 +82,7 @@ const Join = () => {
               lastLineColor=""
             />
           ) : (
-            "회원가입"
+            "이메일 인증"
           )}
         </LoginButton>
 

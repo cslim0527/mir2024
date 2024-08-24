@@ -4,6 +4,7 @@ import {
   User,
   UserCredential,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
@@ -28,6 +29,8 @@ export interface AuthContextType {
   handleLogin: (params: LoginParams) => Promise<UserCredential | ErrorResponse>;
   handleLogOut: () => void;
   handleJoin: (params: JoinParams) => Promise<UserCredential | ErrorResponse>;
+  handleEmailVerification: () => Promise<void | ErrorResponse>;
+  handleChangeVerified: (nextVerified: boolean) => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -37,6 +40,8 @@ const AuthContext = createContext<AuthContextType>({
   handleLogOut: () => {},
   handleJoin: async (params: JoinParams) =>
     Promise.resolve({} as UserCredential),
+  handleEmailVerification: async () => Promise.resolve(),
+  handleChangeVerified: () => {},
 });
 
 export const useAuth = () => {
@@ -61,7 +66,8 @@ export type JoinParams = LoginParams;
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
-  const isAuthenticated = useMemo(() => !!user, [user]);
+  const [isVerified, setIsVerified] = useState(false);
+  const isAuthenticated = useMemo(() => !!user && isVerified, [user]);
 
   const handleLogin = useCallback(async ({ email, password }: LoginParams) => {
     try {
@@ -85,6 +91,19 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   }, []);
 
+  const handleEmailVerification = useCallback(async () => {
+    try {
+      const res = await sendEmailVerification(auth.currentUser!);
+      return res;
+    } catch (error) {
+      return { error } as ErrorResponse;
+    }
+  }, []);
+
+  const handleChangeVerified = useCallback((nextVerified: boolean) => {
+    setIsVerified(nextVerified);
+  }, []);
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       console.log("[user]", user);
@@ -94,7 +113,14 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, handleLogin, handleLogOut, handleJoin }}
+      value={{
+        isAuthenticated,
+        handleLogin,
+        handleLogOut,
+        handleJoin,
+        handleEmailVerification,
+        handleChangeVerified,
+      }}
     >
       {children}
     </AuthContext.Provider>
