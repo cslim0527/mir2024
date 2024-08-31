@@ -26,7 +26,7 @@ const TopBar = (props: HeaderProps) => {
         <ul>
           <li>
             {!isJoinPage && isAuthenticated ? (
-              <LogoutButton type="button" onClick={handleLogOut}>
+              <LogoutButton type="button" onClick={() => handleLogOut()}>
                 로그아웃
               </LogoutButton>
             ) : (
