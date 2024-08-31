@@ -95,7 +95,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천부인",
-        level: 60,
+        level: "내공 60",
         acc: 2,
         def: 0,
         atk: 0,
@@ -106,7 +106,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "양심의 목걸이",
-        level: 5,
+        level: "선 5",
         acc: 0,
         def: 0,
         atk: 5,
@@ -117,7 +117,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "여의주",
-        level: 30,
+        level: "선 30",
         acc: 0,
         def: 2,
         atk: 0,
@@ -392,7 +392,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "녹파향로도",
-        level: 40,
+        level: "악 40",
         acc: 60,
         def: 0,
         atk: 50,
@@ -403,7 +403,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "멸살지옥검",
-        level: 70,
+        level: "악 70",
         acc: 58,
         def: 0,
         atk: 56,
@@ -557,7 +557,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "도룡보도",
-        level: 60,
+        level: "선 60",
         acc: 67,
         def: 0,
         atk: 120,
@@ -727,7 +727,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡장삼",
-        level: 80,
+        level: "화 80",
         acc: 0,
         def: 55,
         atk: 0,
@@ -738,7 +738,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화염마의",
-        level: 130,
+        level: "화 130",
         acc: 0,
         def: 90,
         atk: 0,
@@ -749,7 +749,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "불사조의깃털",
-        level: 250,
+        level: "화 250",
         acc: 0,
         def: 110,
         atk: 0,
@@ -760,7 +760,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡강신의",
-        level: 500,
+        level: "화 500",
         acc: 0,
         def: 110,
         atk: 0,
@@ -771,7 +771,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡의망또",
-        level: 750,
+        level: "화 750",
         acc: 0,
         def: 115,
         atk: 0,
@@ -848,7 +848,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡의반지",
-        level: 320,
+        level: "화 320",
         acc: 0,
         def: 0,
         atk: 0,
@@ -859,7 +859,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "불의정령",
-        level: 400,
+        level: "화 400",
         acc: 0,
         def: 3,
         atk: 0,
@@ -870,7 +870,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "금목걸이",
-        level: 20,
+        level: "화 20",
         acc: 0,
         def: 0,
         atk: 1,
@@ -881,7 +881,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡의눈물",
-        level: 50,
+        level: "화 50",
         acc: 1,
         def: 1,
         atk: 0,
@@ -892,7 +892,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "금팔찌",
-        level: 20,
+        level: "화 20",
         acc: 3,
         def: 0,
         atk: 0,
@@ -903,7 +903,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "불꽃팔찌",
-        level: 42,
+        level: "화 42",
         acc: 3,
         def: 1,
         atk: 0,
@@ -914,7 +914,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "성화의팔찌",
-        level: 57,
+        level: "화 57",
         acc: 3,
         def: 2,
         atk: 0,
@@ -925,7 +925,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "열정의팔찌",
-        level: 78,
+        level: "화 78",
         acc: 2,
         def: 3,
         atk: 0,
@@ -936,7 +936,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "아리나무팔찌",
-        level: 92,
+        level: "화 92",
         acc: 0,
         def: 4,
         atk: 0,
@@ -947,7 +947,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "화룡의팔찌",
-        level: 400,
+        level: "화 400",
         acc: 0,
         def: 5,
         atk: 0,
@@ -1073,7 +1073,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "바다의반지",
-        level: 320,
+        level: "수 320",
         acc: 0,
         def: 0,
         atk: 0,
@@ -1084,7 +1084,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "물의정령",
-        level: 400,
+        level: "수 400",
         acc: 0,
         def: 3,
         atk: 0,
@@ -1095,7 +1095,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "은목걸이",
-        level: 20,
+        level: "수 20",
         acc: 0,
         def: 0,
         atk: 1,
@@ -1106,7 +1106,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수룡의눈물",
-        level: 50,
+        level: "수 50",
         acc: 1,
         def: 1,
         atk: 0,
@@ -1117,7 +1117,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "슈퍼목걸이",
-        level: 150,
+        level: "수 150",
         acc: 2,
         def: 1,
         atk: 0,
@@ -1128,7 +1128,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "은팔찌",
-        level: 20,
+        level: "수 20",
         acc: 3,
         def: 0,
         atk: 0,
@@ -1139,7 +1139,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "얼음팔찌",
-        level: 42,
+        level: "수 42",
         acc: 3,
         def: 1,
         atk: 0,
@@ -1150,7 +1150,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "결빙의팔찌",
-        level: 57,
+        level: "수 57",
         acc: 2,
         def: 2,
         atk: 1,
@@ -1161,7 +1161,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "평온의팔찌",
-        level: 78,
+        level: "수 78",
         acc: 2,
         def: 3,
         atk: 0,
@@ -1172,7 +1172,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "토트의팔찌",
-        level: 92,
+        level: "수 92",
         acc: 0,
         def: 2,
         atk: 0,
@@ -1183,7 +1183,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "바다의팔찌",
-        level: 400,
+        level: "수 400",
         acc: 0,
         def: 5,
         atk: 0,
@@ -1238,7 +1238,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "한빙장삼",
-        level: 80,
+        level: "수 80",
         acc: 0,
         def: 55,
         atk: 0,
@@ -1249,7 +1249,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "한빙마의",
-        level: 130,
+        level: "수 130",
         acc: 0,
         def: 80,
         atk: 0,
@@ -1260,7 +1260,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "도신의",
-        level: 250,
+        level: "수 250",
         acc: 0,
         def: 100,
         atk: 0,
@@ -1271,7 +1271,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수룡강신의",
-        level: 500,
+        level: "수 500",
         acc: 0,
         def: 110,
         atk: 0,
@@ -1282,7 +1282,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수룡의망또",
-        level: 750,
+        level: "수 750",
         acc: 0,
         def: 115,
         atk: 0,
@@ -1419,7 +1419,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천룡의반지",
-        level: 320,
+        level: "천 320",
         acc: 0,
         def: 0,
         atk: 0,
@@ -1430,7 +1430,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "하늘의정령",
-        level: 400,
+        level: "천 400",
         acc: 0,
         def: 3,
         atk: 0,
@@ -1441,7 +1441,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수정팔찌",
-        level: 20,
+        level: "천 20",
         acc: 3,
         def: 0,
         atk: 0,
@@ -1452,7 +1452,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "벼락팔찌",
-        level: 42,
+        level: "천 42",
         acc: 3,
         def: 1,
         atk: 0,
@@ -1463,7 +1463,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "구름의팔찌",
-        level: 57,
+        level: "천 57",
         acc: 2,
         def: 2,
         atk: 1,
@@ -1474,7 +1474,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "작열의팔찌",
-        level: 78,
+        level: "천 78",
         acc: 2,
         def: 3,
         atk: 0,
@@ -1485,7 +1485,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "이비의팔찌",
-        level: 92,
+        level: "천 92",
         acc: 0,
         def: 2,
         atk: 0,
@@ -1496,7 +1496,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천룡의팔찌",
-        level: 400,
+        level: "천 400",
         acc: 0,
         def: 5,
         atk: 0,
@@ -1507,7 +1507,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수정석",
-        level: 20,
+        level: "천 20",
         acc: 0,
         def: 0,
         atk: 1,
@@ -1518,7 +1518,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "청룡의눈물",
-        level: 50,
+        level: "천 50",
         acc: 1,
         def: 1,
         atk: 0,
@@ -1628,7 +1628,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천상마의",
-        level: 80,
+        level: "천 80",
         acc: 0,
         def: 55,
         atk: 0,
@@ -1639,7 +1639,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "푸른마의",
-        level: 130,
+        level: "천 130",
         acc: 0,
         def: 90,
         atk: 0,
@@ -1650,7 +1650,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천사의날개",
-        level: 250,
+        level: "천 250",
         acc: 0,
         def: 110,
         atk: 0,
@@ -1661,7 +1661,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천룡강신의",
-        level: 500,
+        level: "천 500",
         acc: 0,
         def: 110,
         atk: 0,
@@ -1672,7 +1672,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "천룡의망또",
-        level: 750,
+        level: "천 750",
         acc: 0,
         def: 115,
         atk: 0,
@@ -1754,7 +1754,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "땅의반지",
-        level: 320,
+        level: "지 320",
         acc: 0,
         def: 0,
         atk: 0,
@@ -1765,7 +1765,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "땅의정령",
-        level: 400,
+        level: "지 400",
         acc: 0,
         def: 3,
         atk: 0,
@@ -1776,7 +1776,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "옥석",
-        level: 20,
+        level: "지 20",
         acc: 0,
         def: 0,
         atk: 1,
@@ -1787,7 +1787,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "잠룡의눈물",
-        level: 50,
+        level: "지 50",
         acc: 1,
         def: 1,
         atk: 0,
@@ -1853,7 +1853,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "옥팔찌",
-        level: 20,
+        level: "지 20",
         acc: 3,
         def: 0,
         atk: 0,
@@ -1864,7 +1864,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "침묵팔찌",
-        level: 42,
+        level: "지 42",
         acc: 3,
         def: 1,
         atk: 0,
@@ -1875,7 +1875,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "바람의팔찌",
-        level: 57,
+        level: "지 57",
         acc: 2,
         def: 2,
         atk: 1,
@@ -1886,7 +1886,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "약속의팔찌",
-        level: 78,
+        level: "지 78",
         acc: 2,
         def: 3,
         atk: 0,
@@ -1897,7 +1897,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수라의팔찌",
-        level: 92,
+        level: "지 92",
         acc: 0,
         def: 2,
         atk: 0,
@@ -1908,7 +1908,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "땅의팔찌",
-        level: 400,
+        level: "지 400",
         acc: 0,
         def: 5,
         atk: 0,
@@ -1985,7 +1985,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "지공마의",
-        level: 80,
+        level: "지 80",
         acc: 0,
         def: 55,
         atk: 0,
@@ -1996,7 +1996,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "황토마의",
-        level: 130,
+        level: "지 130",
         acc: 0,
         def: 80,
         atk: 0,
@@ -2007,7 +2007,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "마신의",
-        level: 250,
+        level: "지 250",
         acc: 0,
         def: 100,
         atk: 0,
@@ -2018,7 +2018,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "지룡강신의",
-        level: 500,
+        level: "지 500",
         acc: 0,
         def: 110,
         atk: 0,
@@ -2029,7 +2029,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "지룡의망또",
-        level: 750,
+        level: "지 750",
         acc: 0,
         def: 115,
         atk: 0,
@@ -2056,7 +2056,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "청동장갑",
-        level: 5,
+        level: "음 5",
         acc: 4,
         def: 1,
         atk: 0,
@@ -2067,7 +2067,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "철장갑",
-        level: 15,
+        level: "음 15",
         acc: 3,
         def: 1,
         atk: 0,
@@ -2078,7 +2078,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "금장갑",
-        level: 30,
+        level: "음 30",
         acc: 5,
         def: 2,
         atk: 0,
@@ -2089,7 +2089,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "백금장갑",
-        level: 50,
+        level: "음 50",
         acc: 5,
         def: 3,
         atk: 0,
@@ -2100,7 +2100,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수라의장갑",
-        level: 70,
+        level: "음 70",
         acc: 5,
         def: 1,
         atk: 0,
@@ -2111,7 +2111,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "용신의장갑",
-        level: 99,
+        level: "음 99",
         acc: 5,
         def: 2,
         atk: 1,
@@ -2122,7 +2122,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "어둠의팔찌",
-        level: 400,
+        level: "음 400",
         acc: 0,
         def: 7,
         atk: 0,
@@ -2166,7 +2166,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "어둠의반지",
-        level: 320,
+        level: "음 320",
         acc: 2,
         def: 2,
         atk: 0,
@@ -2232,7 +2232,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "어둠의돌",
-        level: 20,
+        level: "음 20",
         acc: 1,
         def: 0,
         atk: 1,
@@ -2243,7 +2243,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "자호의이빨",
-        level: 70,
+        level: "음 70",
         acc: 2,
         def: 0,
         atk: 0,
@@ -2254,7 +2254,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "토트의눈물",
-        level: 30,
+        level: "음 30",
         acc: 0,
         def: 0,
         atk: 0,
@@ -2309,7 +2309,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "은빛갑옷",
-        level: 60,
+        level: "음 60",
         acc: 0,
         def: 90,
         atk: 0,
@@ -2320,7 +2320,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "투명갑옷",
-        level: 90,
+        level: "음 90",
         acc: 0,
         def: 98,
         atk: 0,
@@ -2331,7 +2331,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "어둠의갑옷",
-        level: 120,
+        level: "음 120",
         acc: 0,
         def: 115,
         atk: 0,
@@ -2342,7 +2342,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "이비의갑옷",
-        level: 160,
+        level: "음 160",
         acc: 0,
         def: 125,
         atk: 0,
@@ -2353,7 +2353,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "축복의갑옷",
-        level: 200,
+        level: "음 200",
         acc: 0,
         def: 140,
         atk: 0,
@@ -2364,7 +2364,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "청룡비늘 갑옷",
-        level: 250,
+        level: "음 250",
         acc: 0,
         def: 155,
         atk: 0,
@@ -2375,7 +2375,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수라왕의 갑옷",
-        level: 320,
+        level: "음 320",
         acc: 0,
         def: 140,
         atk: 0,
@@ -2386,7 +2386,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "영혼의갑옷",
-        level: 550,
+        level: "음 550",
         acc: 0,
         def: 175,
         atk: 0,
@@ -2397,7 +2397,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "야차왕의 갑옷",
-        level: 700,
+        level: "음 700",
         acc: 0,
         def: 180,
         atk: 0,
@@ -2408,7 +2408,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "치료의갑옷",
-        level: 750,
+        level: "음 750",
         acc: 0,
         def: 175,
         atk: 0,
@@ -2419,7 +2419,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "암흑의갑옷",
-        level: 800,
+        level: "음 800",
         acc: 0,
         def: 190,
         atk: 0,
@@ -2754,7 +2754,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "청동장갑박",
-        level: 15,
+        level: "양 15",
         acc: 0,
         def: 3,
         atk: 0,
@@ -2765,7 +2765,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "철장갑박",
-        level: 30,
+        level: "양 30",
         acc: 0,
         def: 4,
         atk: 0,
@@ -2776,7 +2776,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "금장갑박",
-        level: 50,
+        level: "양 50",
         acc: 1,
         def: 4,
         atk: 1,
@@ -2787,7 +2787,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "백금장갑박",
-        level: 70,
+        level: "양 70",
         acc: 0,
         def: 5,
         atk: 1,
@@ -2798,7 +2798,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "이비의 장갑박",
-        level: 99,
+        level: "양 99",
         acc: 1,
         def: 5,
         atk: 0,
@@ -2809,7 +2809,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "마신의 장갑박",
-        level: 290,
+        level: "양 290",
         acc: 0,
         def: 3,
         atk: 0,
@@ -2820,7 +2820,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "빛의팔찌",
-        level: 400,
+        level: "양 400",
         acc: 0,
         def: 5,
         atk: 0,
@@ -2831,7 +2831,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "생명의돌",
-        level: 20,
+        level: "양 20",
         acc: 0,
         def: 1,
         atk: 1,
@@ -2842,7 +2842,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "백호의이빨",
-        level: 70,
+        level: "양 70",
         acc: 2,
         def: 0,
         atk: 0,
@@ -2853,7 +2853,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수우의 목걸이",
-        level: 290,
+        level: "양 290",
         acc: 0,
         def: 0,
         atk: 6,
@@ -2864,7 +2864,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "이시스의 눈물",
-        level: 30,
+        level: "선 30",
         acc: 0,
         def: 0,
         atk: 0,
@@ -2941,7 +2941,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "황금투구",
-        level: 400,
+        level: "양 400",
         acc: 0,
         def: 12,
         atk: 0,
@@ -3040,7 +3040,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "예도",
-        level: 200,
+        level: "양 200",
         acc: 70,
         def: 0,
         atk: 70,
@@ -3051,7 +3051,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "사인검",
-        level: 200,
+        level: "양 200",
         acc: 69,
         def: 0,
         atk: 90,
@@ -3062,7 +3062,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "백제도",
-        level: 250,
+        level: "양 250",
         acc: 60,
         def: 0,
         atk: 110,
@@ -3073,7 +3073,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "장미검",
-        level: 250,
+        level: "양 250",
         acc: 70,
         def: 0,
         atk: 99,
@@ -3084,7 +3084,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "팔척사모",
-        level: 280,
+        level: "양 280",
         acc: 59,
         def: 0,
         atk: 150,
@@ -3095,7 +3095,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수우의검",
-        level: 290,
+        level: "양 290",
         acc: 75,
         def: 0,
         atk: 125,
@@ -3106,7 +3106,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "청룡비늘검",
-        level: 350,
+        level: "양 350",
         acc: 82,
         def: 0,
         atk: 100,
@@ -3117,7 +3117,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "활인대검",
-        level: 350,
+        level: "양 350",
         acc: 70,
         def: 0,
         atk: 120,
@@ -3128,7 +3128,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "제룡검",
-        level: 390,
+        level: "양 390",
         acc: 100,
         def: 0,
         atk: 120,
@@ -3139,7 +3139,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "방천화극",
-        level: 430,
+        level: "양 430",
         acc: 95,
         def: 0,
         atk: 140,
@@ -3150,7 +3150,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "어류검",
-        level: 500,
+        level: "양 500",
         acc: 100,
         def: 0,
         atk: 170,
@@ -3161,7 +3161,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "익월검",
-        level: 550,
+        level: "양 550",
         acc: 100,
         def: 0,
         atk: 180,
@@ -3172,7 +3172,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "용광검",
-        level: 550,
+        level: "양 550",
         acc: 100,
         def: 0,
         atk: 190,
@@ -3183,7 +3183,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "창룡신검",
-        level: 620,
+        level: "양 620",
         acc: 120,
         def: 0,
         atk: 210,
@@ -3194,7 +3194,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "월랑검",
-        level: 700,
+        level: "양 700",
         acc: 120,
         def: 0,
         atk: 220,
@@ -3205,7 +3205,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "신검",
-        level: 750,
+        level: "양 750",
         acc: 180,
         def: 0,
         atk: 230,
@@ -3260,7 +3260,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "제왕갑옷",
-        level: 60,
+        level: "양 60",
         acc: 0,
         def: 100,
         atk: 0,
@@ -3271,7 +3271,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "용비늘갑옷",
-        level: 90,
+        level: "양 90",
         acc: 0,
         def: 110,
         atk: 0,
@@ -3282,7 +3282,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "생명의갑옷",
-        level: 120,
+        level: "양 120",
         acc: 0,
         def: 120,
         atk: 0,
@@ -3293,7 +3293,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "미르의갑옷",
-        level: 160,
+        level: "양 160",
         acc: 0,
         def: 130,
         atk: 0,
@@ -3304,7 +3304,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "불사의갑옷",
-        level: 200,
+        level: "양 200",
         acc: 0,
         def: 145,
         atk: 0,
@@ -3315,7 +3315,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "현무비늘 갑옷",
-        level: 250,
+        level: "양 250",
         acc: 0,
         def: 160,
         atk: 0,
@@ -3326,7 +3326,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수우의갑옷",
-        level: 320,
+        level: "양 320",
         acc: 0,
         def: 170,
         atk: 0,
@@ -3337,7 +3337,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "용전사의 갑옷",
-        level: 400,
+        level: "양 400",
         acc: 0,
         def: 180,
         atk: 0,
@@ -3348,7 +3348,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "기력의갑옷",
-        level: 550,
+        level: "양 550",
         acc: 0,
         def: 185,
         atk: 0,
@@ -3359,7 +3359,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "주작의갑옷",
-        level: 700,
+        level: "양 700",
         acc: 0,
         def: 190,
         atk: 0,
@@ -3370,7 +3370,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "회복의갑옷",
-        level: 750,
+        level: "양 750",
         acc: 0,
         def: 180,
         atk: 0,
@@ -3381,7 +3381,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "빛의갑옷",
-        level: 800,
+        level: "양 800",
         acc: 0,
         def: 200,
         atk: 0,
@@ -3425,7 +3425,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수우의반지",
-        level: 290,
+        level: "양 290",
         acc: 2,
         def: 2,
         atk: 0,
@@ -3436,7 +3436,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "빛의반지",
-        level: 320,
+        level: "양 320",
         acc: 0,
         def: 5,
         atk: 0,
@@ -3447,7 +3447,7 @@ export const ITEM_DATA: ItemData = {
       {
         imgSrc: "",
         name: "수우의투구",
-        level: 290,
+        level: "양 290",
         acc: 0,
         def: 10,
         atk: 0,
