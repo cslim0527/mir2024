@@ -3,8 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import useVerify from "./hooks/useVerify";
+import { LineWave } from "react-loader-spinner";
 
 const Verify = () => {
+  const {
+    password,
+    handleChangePassword,
+    errors,
+    handleResetPassword,
+    isPending,
+  } = useVerify();
   return (
     <Wrapper>
       <div
@@ -29,8 +38,44 @@ const Verify = () => {
             marginTop: "16px",
           }}
         >
-          회원가입 완료
+          비밀번호 재설정
         </h1>
+      </div>
+      <div>
+        <div>
+          <Input
+            style={{ marginBottom: "16px" }}
+            type="password"
+            placeholder="비밀번호"
+            value={password}
+            onChange={handleChangePassword}
+          />
+        </div>
+        <div>
+          <ConfirmButton type="button" onClick={handleResetPassword}>
+            {isPending ? (
+              <LineWave
+                visible={true}
+                height="56"
+                width="56"
+                color="#fb5151"
+                ariaLabel="line-wave-loading"
+                wrapperStyle={{
+                  justifyContent: "center",
+                  transform: "translate(10px, -5px)",
+                }}
+                wrapperClass=""
+                firstLineColor=""
+                middleLineColor=""
+                lastLineColor=""
+              />
+            ) : (
+              "비밀번호 설정"
+            )}
+          </ConfirmButton>
+
+          {errors && <ErrorBox>{errors}</ErrorBox>}
+        </div>
       </div>
     </Wrapper>
   );
@@ -57,7 +102,7 @@ const Input = styled.input`
   font-size: 1rem;
 `;
 
-const LoginButton = styled.button`
+const ConfirmButton = styled.button`
   border: 0;
   width: 100%;
   height: 56px;

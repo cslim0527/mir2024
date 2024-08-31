@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import styled from "styled-components";
-
-const DISCORD_CHANNEL_URL = "https://discord.gg/d3JhG38eTG";
+import useMain from "./hooks/useMain";
+import { useAuth } from "@/src/providers/AuthProvider";
 
 const Main = () => {
-  const handleClickDiscord = () => {
-    window.open(DISCORD_CHANNEL_URL);
-  };
+  const { handleClickDiscord } = useMain();
+  const { user, isAuthenticated, handleLogOut } = useAuth();
+
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <Starter>
@@ -18,14 +18,23 @@ const Main = () => {
         <p>클라이언트 문의는 디스코드로!</p>
       </Starter>
 
-      <Login>
-        <span>
-          일부 컨텐츠를 이용하려면
-          <br />
-          로그인이 필요해요!
-        </span>
-        <Link href="/member/login">로그인</Link>
-      </Login>
+      <UserState>
+        {isAuthenticated && user ? (
+          <>
+            <span>{user.email}</span>
+            <button onClick={() => handleLogOut()}>로그아웃</button>
+          </>
+        ) : (
+          <>
+            <span>
+              일부 컨텐츠를 이용하려면
+              <br />
+              로그인이 필요해요!
+            </span>
+            <Link href="/member/login">로그인</Link>
+          </>
+        )}
+      </UserState>
     </div>
   );
 };
@@ -69,7 +78,7 @@ const Discord = styled.button`
   }
 `;
 
-const Login = styled.div`
+const UserState = styled.div`
   width: 289px;
   height: 152px;
   text-align: center;
@@ -85,7 +94,9 @@ const Login = styled.div`
     font-size: 13px;
   }
 
-  a {
+  a,
+  button {
+    border: 0;
     display: block;
     width: 100%;
     height: 46px;

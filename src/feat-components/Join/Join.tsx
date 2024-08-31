@@ -9,12 +9,11 @@ const Join = () => {
   const {
     errors,
     email,
-    // password,
     isPending,
     isDisable,
     handleChangeEmail,
-    // handleChangePassword,
     handleSubmit,
+    isEmailSend,
   } = useJoin();
 
   return (
@@ -51,43 +50,42 @@ const Join = () => {
           placeholder="이메일"
           value={email}
           onChange={handleChangeEmail}
+          disabled={isEmailSend}
         />
       </div>
-      {/* <div>
-        <Input
-          style={{ marginBottom: "16px" }}
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={handleChangePassword}
-        />
-      </div> */}
 
       <div>
-        <LoginButton type="button" onClick={handleSubmit} disabled={isDisable}>
-          {isPending ? (
-            <LineWave
-              visible={true}
-              height="56"
-              width="56"
-              color="#fb5151"
-              ariaLabel="line-wave-loading"
-              wrapperStyle={{
-                justifyContent: "center",
-                transform: "translate(10px, -5px)",
-              }}
-              wrapperClass=""
-              firstLineColor=""
-              middleLineColor=""
-              lastLineColor=""
-            />
-          ) : (
-            "이메일 인증"
-          )}
-        </LoginButton>
+        {!isEmailSend && (
+          <LoginButton
+            type="button"
+            onClick={handleSubmit}
+            disabled={isDisable}
+          >
+            {isPending ? (
+              <LineWave
+                visible={true}
+                height="56"
+                width="56"
+                color="#fb5151"
+                ariaLabel="line-wave-loading"
+                wrapperStyle={{
+                  justifyContent: "center",
+                  transform: "translate(10px, -5px)",
+                }}
+                wrapperClass=""
+                firstLineColor=""
+                middleLineColor=""
+                lastLineColor=""
+              />
+            ) : (
+              "이메일 인증"
+            )}
+          </LoginButton>
+        )}
 
         {errors && <ErrorBox>{errors}</ErrorBox>}
       </div>
+      {isEmailSend && <SuccessBox>인증 메일 발송이 완료되었습니다.</SuccessBox>}
     </Wrapper>
   );
 };
@@ -111,6 +109,11 @@ const Input = styled.input`
   padding-left: 15px;
   padding-right: 32px;
   font-size: 1rem;
+
+  &:disabled {
+    color: #9b9b9b;
+    background-color: #c6cfd8;
+  }
 `;
 
 const LoginButton = styled.button`
@@ -136,4 +139,14 @@ const ErrorBox = styled.div`
   border-radius: 4px;
   border: 1px solid #9d140d;
   background-color: #e3c0bc;
+`;
+
+const SuccessBox = styled.div`
+  margin-top: 4px;
+  padding: 16px;
+  font-size: 12px;
+  color: #399650;
+  border-radius: 4px;
+  border: 1px solid #0d9d5f;
+  background-color: #bde3bc;
 `;

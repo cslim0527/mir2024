@@ -1,5 +1,5 @@
 import AppLayout from "@/src/components/AppLayout";
-import Verify from "@/src/feat-components/\bVerify";
+import Verify from "@/src/feat-components/Verify";
 
 const VerifyPage = () => {
   return (

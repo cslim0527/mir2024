@@ -1,16 +1,14 @@
 import { ChangeEvent, useCallback, useMemo, useState } from "react";
 import { ErrorResponse, useAuth } from "@/src/providers/AuthProvider";
-import { useRouter } from "next/navigation";
 import { delay } from "@/src/utils/common";
 import { v4 as uuidv4 } from "uuid";
 
 export default function useJoin() {
-  const router = useRouter();
-  const { handleJoin, handleEmailVerification } = useAuth();
+  const { handleJoin, handleEmailVerification, handleDeleteUser } = useAuth();
   const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const [isPending, setIsPending] = useState(false);
   const [errors, setErrors] = useState("");
+  const [isEmailSend, setIsEmailSend] = useState(false);
 
   const temporaryJoin = useCallback(async () => {
     // 리셋
@@ -18,7 +16,8 @@ export default function useJoin() {
     setErrors("");
 
     // 임의 회원가입 시도
-    const res = await handleJoin({ email, password: uuidv4() });
+    const uuid = uuidv4();
+    const res = await handleJoin({ email, password: uuid });
     await delay(1000);
 
     // 가입 결과 반영
@@ -35,22 +34,16 @@ export default function useJoin() {
 
   const handleSubmit = useCallback(async () => {
     const tempJoinResult = await temporaryJoin();
-    console.log("[tempJoinResult]", tempJoinResult);
-
     const verifyResult = tempJoinResult && (await handleEmailVerification());
-    console.log("[verifyResult]", verifyResult);
+    if (verifyResult === true) {
+      handleDeleteUser();
+      setIsEmailSend(true);
+    }
   }, [temporaryJoin, handleEmailVerification]);
 
   const handleChangeEmail = useCallback((e: ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value);
   }, []);
-
-  // const handleChangePassword = useCallback(
-  //   (e: ChangeEvent<HTMLInputElement>) => {
-  //     setPassword(e.target.value);
-  //   },
-  //   []
-  // );
 
   const isDisable = useMemo(() => {
     return email.length === 0 || isPending;
@@ -58,12 +51,11 @@ export default function useJoin() {
 
   return {
     email,
-    // password,
     errors,
     isPending,
     isDisable,
     handleChangeEmail,
-    // handleChangePassword,
     handleSubmit,
+    isEmailSend,
   };
 }

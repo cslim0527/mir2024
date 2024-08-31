@@ -4,11 +4,16 @@ import Link from "next/link";
 import styled from "styled-components";
 import { HEADER_HEIGHT } from "@/src/constants/layout";
 import { useAuth } from "@/src/providers/AuthProvider";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
 interface HeaderProps {}
 
 const TopBar = (props: HeaderProps) => {
+  const pathname = usePathname();
   const { handleLogOut, isAuthenticated } = useAuth();
+  const isJoinPage = useMemo(() => pathname === "/member/join", []);
+
   return (
     <Wrapper>
       <div>
@@ -20,7 +25,7 @@ const TopBar = (props: HeaderProps) => {
       <AsideMenus>
         <ul>
           <li>
-            {isAuthenticated ? (
+            {!isJoinPage && isAuthenticated ? (
               <LogoutButton type="button" onClick={handleLogOut}>
                 로그아웃
               </LogoutButton>
