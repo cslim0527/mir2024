@@ -13,7 +13,7 @@ export interface ItemDetail {
 export interface Item {
   imgSrc: string;
   name: string;
-  level: number;
+  level: number | string;
   acc: number; // 정확도
   def: number; // 방어력
   atk: number; // 파괴력

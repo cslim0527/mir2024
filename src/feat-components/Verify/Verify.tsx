@@ -1,21 +1,19 @@
 "use client";
 
-import { LineWave } from "react-loader-spinner";
-import useJoin from "./hooks/useJoin";
-import styled from "styled-components";
+import Link from "next/link";
 import Image from "next/image";
+import styled from "styled-components";
+import useVerify from "./hooks/useVerify";
+import { LineWave } from "react-loader-spinner";
 
-const Join = () => {
+const Verify = () => {
   const {
+    password,
+    handleChangePassword,
     errors,
-    email,
+    handleResetPassword,
     isPending,
-    isDisable,
-    handleChangeEmail,
-    handleSubmit,
-    isEmailSend,
-  } = useJoin();
-
+  } = useVerify();
   return (
     <Wrapper>
       <div
@@ -40,27 +38,21 @@ const Join = () => {
             marginTop: "16px",
           }}
         >
-          회원가입
+          비밀번호 재설정
         </h1>
       </div>
       <div>
-        <Input
-          style={{ marginBottom: "8px" }}
-          type="text"
-          placeholder="이메일"
-          value={email}
-          onChange={handleChangeEmail}
-          disabled={isEmailSend}
-        />
-      </div>
-
-      <div>
-        {!isEmailSend && (
-          <LoginButton
-            type="button"
-            onClick={handleSubmit}
-            disabled={isDisable}
-          >
+        <div>
+          <Input
+            style={{ marginBottom: "16px" }}
+            type="password"
+            placeholder="비밀번호"
+            value={password}
+            onChange={handleChangePassword}
+          />
+        </div>
+        <div>
+          <ConfirmButton type="button" onClick={handleResetPassword}>
             {isPending ? (
               <LineWave
                 visible={true}
@@ -78,19 +70,18 @@ const Join = () => {
                 lastLineColor=""
               />
             ) : (
-              "이메일 인증"
+              "비밀번호 설정"
             )}
-          </LoginButton>
-        )}
+          </ConfirmButton>
 
-        {errors && <ErrorBox>{errors}</ErrorBox>}
+          {errors && <ErrorBox>{errors}</ErrorBox>}
+        </div>
       </div>
-      {isEmailSend && <SuccessBox>인증 메일 발송이 완료되었습니다.</SuccessBox>}
     </Wrapper>
   );
 };
 
-export default Join;
+export default Verify;
 
 const Wrapper = styled.div`
   width: 450px;
@@ -109,14 +100,9 @@ const Input = styled.input`
   padding-left: 15px;
   padding-right: 32px;
   font-size: 1rem;
-
-  &:disabled {
-    color: #9b9b9b;
-    background-color: #c6cfd8;
-  }
 `;
 
-const LoginButton = styled.button`
+const ConfirmButton = styled.button`
   border: 0;
   width: 100%;
   height: 56px;
@@ -132,21 +118,10 @@ const LoginButton = styled.button`
 `;
 
 const ErrorBox = styled.div`
-  margin-top: 16px;
   padding: 16px;
   font-size: 12px;
   color: #96393f;
   border-radius: 4px;
   border: 1px solid #9d140d;
   background-color: #e3c0bc;
-`;
-
-const SuccessBox = styled.div`
-  margin-top: 4px;
-  padding: 16px;
-  font-size: 12px;
-  color: #399650;
-  border-radius: 4px;
-  border: 1px solid #0d9d5f;
-  background-color: #bde3bc;
 `;

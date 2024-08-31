@@ -4,11 +4,16 @@ import Link from "next/link";
 import styled from "styled-components";
 import { HEADER_HEIGHT } from "@/src/constants/layout";
 import { useAuth } from "@/src/providers/AuthProvider";
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
 interface HeaderProps {}
 
 const TopBar = (props: HeaderProps) => {
+  const pathname = usePathname();
   const { handleLogOut, isAuthenticated } = useAuth();
+  const isJoinPage = useMemo(() => pathname === "/member/join", []);
+
   return (
     <Wrapper>
       <div>
@@ -20,10 +25,10 @@ const TopBar = (props: HeaderProps) => {
       <AsideMenus>
         <ul>
           <li>
-            {isAuthenticated ? (
-              <button type="button" onClick={() => handleLogOut()}>
+            {!isJoinPage && isAuthenticated ? (
+              <LogoutButton type="button" onClick={handleLogOut}>
                 로그아웃
-              </button>
+              </LogoutButton>
             ) : (
               <Link href="/member/login">로그인</Link>
             )}
@@ -71,4 +76,17 @@ const AsideMenus = styled.div`
     display: flex;
     gap: 10px;
   }
+`;
+
+const LogoutButton = styled.button`
+  border: 0;
+  background-color: transparent;
+  color: #ffffffb3;
+  font-size: 14px;
+  font-weight: normal;
+
+  &:hover {
+    color: #ffffff;
+  }
+  cursor: pointer;
 `;

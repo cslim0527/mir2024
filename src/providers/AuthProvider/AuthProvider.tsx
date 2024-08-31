@@ -4,9 +4,11 @@ import {
   User,
   UserCredential,
   createUserWithEmailAndPassword,
+  sendEmailVerification,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  deleteUser,
 } from "firebase/auth";
 import auth from "@/src/network/auth";
 import React, {
@@ -24,19 +26,27 @@ export type ErrorResponse = {
 };
 
 export interface AuthContextType {
+  user: User | null;
   isAuthenticated: boolean;
   handleLogin: (params: LoginParams) => Promise<UserCredential | ErrorResponse>;
-  handleLogOut: () => void;
+  handleLogOut: (refresh?: boolean) => void;
   handleJoin: (params: JoinParams) => Promise<UserCredential | ErrorResponse>;
+  handleEmailVerification: () => Promise<boolean | ErrorResponse>;
+  handleDeleteUser: () => Promise<boolean | ErrorResponse>;
+  handleChangeVerified: (nextVerified: boolean) => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
+  user: {} as User,
   isAuthenticated: false,
   handleLogin: async (params: LoginParams) =>
     Promise.resolve({} as UserCredential),
-  handleLogOut: () => {},
+  handleLogOut: (refresh?: boolean) => {},
   handleJoin: async (params: JoinParams) =>
     Promise.resolve({} as UserCredential),
+  handleEmailVerification: async () => Promise.resolve(true),
+  handleDeleteUser: async () => Promise.resolve(true),
+  handleChangeVerified: () => {},
 });
 
 export const useAuth = () => {
@@ -61,6 +71,7 @@ export type JoinParams = LoginParams;
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
+  const [isVerified, setIsVerified] = useState(false);
   const isAuthenticated = useMemo(() => !!user, [user]);
 
   const handleLogin = useCallback(async ({ email, password }: LoginParams) => {
@@ -72,14 +83,40 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   }, []);
 
-  const handleLogOut = useCallback(() => {
+  const handleLogOut = useCallback((refresh?: boolean) => {
     signOut(auth);
+
+    if (refresh) {
+      window.location.reload();
+    }
   }, []);
 
   const handleJoin = useCallback(async ({ email, password }: JoinParams) => {
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       return res;
+    } catch (error) {
+      return { error } as ErrorResponse;
+    }
+  }, []);
+
+  const handleEmailVerification = useCallback(async () => {
+    try {
+      await sendEmailVerification(auth.currentUser!);
+      return true;
+    } catch (error) {
+      return { error } as ErrorResponse;
+    }
+  }, []);
+
+  const handleChangeVerified = useCallback((nextVerified: boolean) => {
+    setIsVerified(nextVerified);
+  }, []);
+
+  const handleDeleteUser = useCallback(async () => {
+    try {
+      await deleteUser(auth.currentUser!);
+      return true;
     } catch (error) {
       return { error } as ErrorResponse;
     }
@@ -94,7 +131,16 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, handleLogin, handleLogOut, handleJoin }}
+      value={{
+        user,
+        isAuthenticated,
+        handleLogin,
+        handleLogOut,
+        handleJoin,
+        handleEmailVerification,
+        handleChangeVerified,
+        handleDeleteUser,
+      }}
     >
       {children}
     </AuthContext.Provider>
