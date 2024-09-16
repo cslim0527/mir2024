@@ -27,7 +27,7 @@ const Gnb = () => {
       <SubMenu $isDimmedOpen={isDimmedOpen}>
         <ul>
           <li>
-            <a href="#">공지사항</a>
+            <Link href="/community/notice">공지사항</Link>
           </li>
         </ul>
         <ul>
