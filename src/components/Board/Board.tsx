@@ -1,8 +1,11 @@
 import React from "react";
-import ReactQuill from "react-quill";
 import styled from "styled-components";
 import useBoard from "./hooks/useBoard";
 import "react-quill/dist/quill.snow.css";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), {
+  ssr: false,
+});
 
 export default function Board() {
   const {
