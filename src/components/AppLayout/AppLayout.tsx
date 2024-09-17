@@ -4,6 +4,7 @@ import { HEADER_HEIGHT } from "@/src/constants/layout";
 import styled from "styled-components";
 import Header from "../TopBar";
 import Gnb from "../Gnb";
+import "@/src/styles/common.scss";
 
 interface AppLayoutProps {
   children: React.ReactNode;
