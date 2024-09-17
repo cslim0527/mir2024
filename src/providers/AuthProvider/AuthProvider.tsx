@@ -20,24 +20,35 @@ import React, {
   useState,
 } from "react";
 import { FirebaseError } from "firebase/app";
+import db from "@/src/network/db";
+import {
+  DocumentData,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 export type ErrorResponse = {
   error: FirebaseError;
 };
 
+export type MemberGrade = "member" | "admin" | "super";
+
 export interface AuthContextType {
   user: User | null;
+  grade: MemberGrade | null;
   isAuthenticated: boolean;
   handleLogin: (params: LoginParams) => Promise<UserCredential | ErrorResponse>;
   handleLogOut: (refresh?: boolean) => void;
   handleJoin: (params: JoinParams) => Promise<UserCredential | ErrorResponse>;
   handleEmailVerification: () => Promise<boolean | ErrorResponse>;
   handleDeleteUser: () => Promise<boolean | ErrorResponse>;
-  handleChangeVerified: (nextVerified: boolean) => void;
 }
 
 const AuthContext = createContext<AuthContextType>({
   user: {} as User,
+  grade: "member",
   isAuthenticated: false,
   handleLogin: async (params: LoginParams) =>
     Promise.resolve({} as UserCredential),
@@ -46,7 +57,6 @@ const AuthContext = createContext<AuthContextType>({
     Promise.resolve({} as UserCredential),
   handleEmailVerification: async () => Promise.resolve(true),
   handleDeleteUser: async () => Promise.resolve(true),
-  handleChangeVerified: () => {},
 });
 
 export const useAuth = () => {
@@ -71,8 +81,27 @@ export type JoinParams = LoginParams;
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [user, setUser] = useState<User | null>(null);
-  const [isVerified, setIsVerified] = useState(false);
+  const [member, setMember] = useState<DocumentData | null>(null);
   const isAuthenticated = useMemo(() => !!user, [user]);
+  const grade = useMemo(() => member && member.grade, [member]);
+
+  const getMember = useCallback(async () => {
+    if (!user) {
+      return null;
+    }
+
+    const q = query(
+      collection(db, "member"),
+      where("email", "==", user?.email)
+    );
+    const querySnapshot = await getDocs(q);
+
+    let member: DocumentData = {};
+    querySnapshot.forEach((doc) => {
+      member = { id: doc.id, ...doc.data() };
+    });
+    return member;
+  }, [user]);
 
   const handleLogin = useCallback(async ({ email, password }: LoginParams) => {
     try {
@@ -109,10 +138,6 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     }
   }, []);
 
-  const handleChangeVerified = useCallback((nextVerified: boolean) => {
-    setIsVerified(nextVerified);
-  }, []);
-
   const handleDeleteUser = useCallback(async () => {
     try {
       await deleteUser(auth.currentUser!);
@@ -121,6 +146,16 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
       return { error } as ErrorResponse;
     }
   }, []);
+
+  useEffect(() => {
+    const initMember = async () => {
+      const member = await getMember();
+      console.log("[init]", member);
+      setMember(member);
+    };
+
+    initMember();
+  }, [user]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -133,12 +168,12 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     <AuthContext.Provider
       value={{
         user,
+        grade,
         isAuthenticated,
         handleLogin,
         handleLogOut,
         handleJoin,
         handleEmailVerification,
-        handleChangeVerified,
         handleDeleteUser,
       }}
     >

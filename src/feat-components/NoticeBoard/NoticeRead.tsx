@@ -2,13 +2,15 @@
 import React, { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import useBoard from "@/src/components/Board/hooks/useBoard";
+import { timeStampToDate } from "@/src/utils/common";
+import styled from "styled-components";
+import Permission from "@/src/components/Permission/Permission";
 
 interface BoardReadProps {
   article: any;
 }
 
 export default function NoticeRead({ article }: BoardReadProps) {
-  console.log("[article]", article);
   const router = useRouter();
   const { deleteArticle } = useBoard();
 
@@ -29,18 +31,11 @@ export default function NoticeRead({ article }: BoardReadProps) {
   }
 
   return (
-    <div style={{ background: "#fff", padding: "30px" }}>
-      <div
-        style={{
-          borderBottom: "2px solid #eee",
-          fontWeight: "bold",
-          fontSize: "1.5rem",
-          padding: "12px 12px 6px 0",
-          marginBottom: "12px",
-        }}
-      >
-        {article.subject}
-      </div>
+    <ReadWrapper>
+      <ReadHeader>
+        <h2>{article.subject}</h2>
+        <span>{timeStampToDate(article.created_at)}</span>
+      </ReadHeader>
       <div
         className="board-read-status"
         dangerouslySetInnerHTML={{ __html: article.content }}
@@ -50,10 +45,32 @@ export default function NoticeRead({ article }: BoardReadProps) {
           뒤로가기
         </button>
 
-        <button type="button" className="btn btn-red" onClick={handleDelete}>
-          삭제
-        </button>
+        <Permission permissionList={["admin", "super"]}>
+          <button type="button" className="btn btn-red" onClick={handleDelete}>
+            삭제
+          </button>
+        </Permission>
       </div>
-    </div>
+    </ReadWrapper>
   );
 }
+
+const ReadWrapper = styled.div`
+  background-color: #fff;
+  padding: 30px;
+`;
+
+const ReadHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 3px solid #eee;
+  font-weight: "bold";
+  font-size: 1.5rem;
+  padding: 12px 12px 6px 0;
+  margin-bottom: 12px;
+
+  span {
+    font-size: 14px;
+  }
+`;

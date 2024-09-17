@@ -1,3 +1,4 @@
+import { format } from "date-fns";
 import { SyntheticEvent } from "react";
 
 export const comma = (num: number) =>
@@ -19,3 +20,6 @@ export const ifErrorNoImg = (
 export const delay = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
+
+export const timeStampToDate = (ts: number) =>
+  format(new Date(ts), "yyyy-MM-dd");
