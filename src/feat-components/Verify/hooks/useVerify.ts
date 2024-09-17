@@ -5,10 +5,16 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { ErrorResponse, useAuth } from "@/src/providers/AuthProvider";
+import {
+  ErrorResponse,
+  MemberGrade,
+  useAuth,
+} from "@/src/providers/AuthProvider";
 import { delay } from "@/src/utils/common";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
+import { addDoc, collection } from "firebase/firestore";
+import db from "@/src/network/db";
 
 export default function useVerify() {
   const router = useRouter();
@@ -43,6 +49,12 @@ export default function useVerify() {
 
     if ("operationType" in res && res.operationType === "signIn") {
       alert("비밀번호가 재설정 되었습니다.");
+      const memberCollection = collection(db, "member");
+      await addDoc(memberCollection, {
+        email,
+        grade: "member" as MemberGrade,
+        created_at: new Date().getTime(),
+      });
       router.push("/");
     } else {
       const { error } = res as ErrorResponse;

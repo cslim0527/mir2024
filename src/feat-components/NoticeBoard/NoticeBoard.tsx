@@ -6,6 +6,8 @@ import styled from "styled-components";
 import useBoard from "@/src/components/Board/hooks/useBoard";
 import { DocumentData } from "firebase/firestore";
 import { format } from "date-fns";
+import { timeStampToDate } from "@/src/utils/common";
+import Permission from "@/src/components/Permission/Permission";
 
 export default function NoticeBoard() {
   const { getBoardData } = useBoard();
@@ -54,9 +56,11 @@ export default function NoticeBoard() {
         </div>
 
         <div className="board-controls">
-          <Link href="/community/notice/write" className="btn btn-dark">
-            글쓰기
-          </Link>
+          <Permission permissionList={["admin", "super"]}>
+            <Link href="/community/notice/write" className="btn btn-dark">
+              글쓰기
+            </Link>
+          </Permission>
         </div>
 
         <div id="board-list">
@@ -87,9 +91,7 @@ export default function NoticeBoard() {
                             {article.subject}
                           </a>
                         </th>
-                        <td>
-                          {format(new Date(article.created_at), "yyyy-MM-dd")}
-                        </td>
+                        <td>{timeStampToDate(article.created_at)}</td>
                       </tr>
                     );
                   })}
