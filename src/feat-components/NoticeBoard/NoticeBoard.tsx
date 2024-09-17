@@ -5,7 +5,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import useBoard from "@/src/components/Board/hooks/useBoard";
 import { DocumentData } from "firebase/firestore";
-import { format, fromUnixTime } from "date-fns";
+import { format } from "date-fns";
 
 export default function NoticeBoard() {
   const { getBoardData } = useBoard();
