@@ -12,7 +12,7 @@ interface ItemsTableProps {
 
 const ItemsTable = ({ data, type }: ItemsTableProps) => {
   return (
-    <Table>
+    <table className="table">
       <thead>
         <tr>
           <th>이미지</th>
@@ -47,53 +47,53 @@ const ItemsTable = ({ data, type }: ItemsTableProps) => {
           </tr>
         ))}
       </tbody>
-    </Table>
+    </table>
   );
 };
 
 export default ItemsTable;
 
-const Table = styled.table`
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  tr {
-    border: 1px solid #efefef;
-  }
+// const Table = styled.table`
+//   width: 100%;
+//   text-align: center;
+//   border-collapse: collapse;
+//   tr {
+//     border: 1px solid #efefef;
+//   }
 
-  th {
-    padding: 8px;
-    font-size: 14px;
-    color: #6f6863;
-    background-color: #efeeee;
+//   th {
+//     padding: 8px;
+//     font-size: 14px;
+//     color: #6f6863;
+//     background-color: #efeeee;
 
-    &:first-child {
-      width: 200px;
-    }
+//     &:first-child {
+//       width: 200px;
+//     }
 
-    &:nth-child(2) {
-      width: 110px;
-    }
+//     &:nth-child(2) {
+//       width: 110px;
+//     }
 
-    &:nth-child(3) {
-      width: 145px;
-    }
+//     &:nth-child(3) {
+//       width: 145px;
+//     }
 
-    &:nth-child(4),
-    &:nth-child(5),
-    &:nth-child(6),
-    &:nth-child(7) {
-      width: 55px;
-    }
-  }
+//     &:nth-child(4),
+//     &:nth-child(5),
+//     &:nth-child(6),
+//     &:nth-child(7) {
+//       width: 55px;
+//     }
+//   }
 
-  td {
-    padding: 10px 8px;
-    font-size: 14px;
-    color: #6f6863;
+//   td {
+//     padding: 10px 8px;
+//     font-size: 14px;
+//     color: #6f6863;
 
-    &.name {
-      font-weight: bold;
-    }
-  }
-`;
+//     &.name {
+//       font-weight: bold;
+//     }
+//   }
+// `;

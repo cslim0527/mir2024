@@ -1,7 +1,6 @@
 "use client";
 
 import { SkillItem } from "@/src/types/skill";
-import styled from "styled-components";
 
 interface SkillTableProps {
   data: SkillItem[];
@@ -9,7 +8,7 @@ interface SkillTableProps {
 
 const SkillTable = ({ data }: SkillTableProps) => {
   return (
-    <Table>
+    <table className="table">
       <thead>
         <tr>
           <th>이름</th>
@@ -28,46 +27,46 @@ const SkillTable = ({ data }: SkillTableProps) => {
           </tr>
         ))}
       </tbody>
-    </Table>
+    </table>
   );
 };
 
 export default SkillTable;
 
-const Table = styled.table`
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  tr {
-    border: 1px solid #efefef;
-  }
+// const Table = styled.table`
+//   width: 100%;
+//   text-align: center;
+//   border-collapse: collapse;
+//   tr {
+//     border: 1px solid #efefef;
+//   }
 
-  th {
-    padding: 8px;
-    font-size: 14px;
-    color: #6f6863;
-    background-color: #efeeee;
+//   th {
+//     padding: 8px;
+//     font-size: 14px;
+//     color: #6f6863;
+//     background-color: #efeeee;
 
-    &:first-child {
-      width: 200px;
-    }
+//     &:first-child {
+//       width: 200px;
+//     }
 
-    &:nth-child(2) {
-      width: 110px;
-    }
+//     &:nth-child(2) {
+//       width: 110px;
+//     }
 
-    &:nth-child(3) {
-      width: 145px;
-    }
-  }
+//     &:nth-child(3) {
+//       width: 145px;
+//     }
+//   }
 
-  td {
-    padding: 10px 8px;
-    font-size: 14px;
-    color: #6f6863;
+//   td {
+//     padding: 10px 8px;
+//     font-size: 14px;
+//     color: #6f6863;
 
-    &.name {
-      font-weight: bold;
-    }
-  }
-`;
+//     &.name {
+//       font-weight: bold;
+//     }
+//   }
+// `;

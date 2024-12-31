@@ -1,0 +1,47 @@
+.join-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  width: 450px;
+  background-color: #fff;
+  border: 1px solid #c6cfd8;
+  margin: 60px auto 0 auto;
+
+  h1 {
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  input[type="text"] {
+    outline: none;
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    border: 1px solid #c6cfd8;
+    padding-left: 15px;
+    padding-right: 32px;
+    font-size: 1rem;
+
+    &:disabled {
+      color: #9b9b9b;
+      background-color: #c6cfd8;
+    }
+  }
+
+  .login-button {
+    border: 0;
+    width: 100%;
+    height: 56px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #b1282c;
+    cursor: pointer;
+    &:disabled {
+      color: #8a8a8a;
+      background-color: #eee;
+    }
+  }
+}

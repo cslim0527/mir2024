@@ -10,7 +10,7 @@ const Items = () => {
   const { currentJob, handleChangeJob } = useItems();
   return (
     <div>
-      <Tabs>
+      <div className="tabs">
         <ul>
           {Object.entries(ITEM_DATA).map((data) => (
             <li
@@ -22,20 +22,14 @@ const Items = () => {
             </li>
           ))}
         </ul>
-      </Tabs>
+      </div>
 
-      <div
-        style={{
-          background: "#fff",
-          borderRadius: "3px",
-          border: "1px solid #999",
-        }}
-      >
-        <Title>
+      <div className="title-area">
+        <div className="title">
           <img src="/assets/images/items/light/수우의투구.gif" alt="" />
           <span>아이템</span>
           <b>{ITEM_DATA[currentJob].type}</b>
-        </Title>
+        </div>
         <ItemsTable data={ITEM_DATA[currentJob].data} type={currentJob} />
       </div>
     </div>
@@ -44,58 +38,33 @@ const Items = () => {
 
 export default Items;
 
-const Title = styled.div`
-  font-size: 18px;
-  padding: 20px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
+// const Title = styled.div`
+//   font-size: 18px;
+//   padding: 20px;
+//   font-weight: 600;
+//   display: flex;
+//   align-items: center;
 
-  img {
-    margin: 0 4px;
-  }
+//   img {
+//     margin: 0 4px;
+//   }
 
-  span {
-    display: flex;
-    align-items: center;
+//   span {
+//     display: flex;
+//     align-items: center;
 
-    &::after {
-      content: "";
-      display: block;
-      width: 2px;
-      height: 10px;
-      background-color: #99908a;
-      margin: 0 5px;
-    }
-  }
+//     &::after {
+//       content: "";
+//       display: block;
+//       width: 2px;
+//       height: 10px;
+//       background-color: #99908a;
+//       margin: 0 5px;
+//     }
+//   }
 
-  b {
-    font-weight: bold;
-    color: #6f6863;
-  }
-`;
-
-const Tabs = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-
-  ul {
-    display: flex;
-    background: #fff;
-    border-radius: 3px;
-    border: 1px solid #999;
-    padding: 10px;
-  }
-
-  li {
-    cursor: pointer;
-    font-weight: bold;
-    color: #6f6863;
-    padding: 8px 12px;
-    &.active {
-      color: #333;
-      text-decoration: underline;
-    }
-  }
-`;
+//   b {
+//     font-weight: bold;
+//     color: #6f6863;
+//   }
+// `;

@@ -3,8 +3,8 @@ import React, { useCallback } from "react";
 import { useRouter } from "next/navigation";
 import useBoard from "@/src/components/Board/hooks/useBoard";
 import { timeStampToDate } from "@/src/utils/common";
-import styled from "styled-components";
 import Permission from "@/src/components/Permission/Permission";
+import styles from "./NoticeRead.module.scss";
 
 interface BoardReadProps {
   article: any;
@@ -31,11 +31,11 @@ export default function NoticeRead({ article }: BoardReadProps) {
   }
 
   return (
-    <ReadWrapper>
-      <ReadHeader>
+    <div className={styles["notice-read"]}>
+      <div className="header">
         <h2>{article.subject}</h2>
         <span>{timeStampToDate(article.created_at)}</span>
-      </ReadHeader>
+      </div>
       <div
         className="board-read-status"
         dangerouslySetInnerHTML={{ __html: article.content }}
@@ -51,26 +51,6 @@ export default function NoticeRead({ article }: BoardReadProps) {
           </button>
         </Permission>
       </div>
-    </ReadWrapper>
+    </div>
   );
 }
-
-const ReadWrapper = styled.div`
-  background-color: #fff;
-  padding: 30px;
-`;
-
-const ReadHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 3px solid #eee;
-  font-weight: "bold";
-  font-size: 1.5rem;
-  padding: 12px 12px 6px 0;
-  margin-bottom: 12px;
-
-  span {
-    font-size: 14px;
-  }
-`;

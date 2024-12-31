@@ -1,0 +1,19 @@
+.notice-read {
+  background-color: #fff;
+  padding: 30px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 3px solid #eee;
+    font-weight: "bold";
+    font-size: 1.5rem;
+    padding: 12px 12px 6px 0;
+    margin-bottom: 12px;
+
+    span {
+      font-size: 14px;
+    }
+  }
+}

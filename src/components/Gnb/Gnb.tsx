@@ -1,16 +1,17 @@
-import { GNB_HEIGHT } from "@/src/constants/layout";
-import styled from "styled-components";
-import { useGnb } from "./hooks/useGnb";
 import Link from "next/link";
+import classNames from "classnames";
+import { useGnb } from "./hooks/useGnb";
+import styles from "./Gnb.module.scss";
 
 const Gnb = () => {
   const { isDimmedOpen, handleToggleDimmed } = useGnb();
   return (
-    <Wrapper
+    <nav
+      className={styles.gnb}
       onMouseLeave={() => handleToggleDimmed(false)}
       onMouseEnter={() => handleToggleDimmed(true)}
     >
-      <MainMenu>
+      <ul className="main-menu">
         <li>
           <a href="#">새소식</a>
         </li>
@@ -23,8 +24,8 @@ const Gnb = () => {
         <li>
           <a href="#">커뮤니티</a>
         </li>
-      </MainMenu>
-      <SubMenu $isDimmedOpen={isDimmedOpen}>
+      </ul>
+      <div className={classNames("sub-menu", { open: isDimmedOpen })}>
         <ul>
           <li>
             <Link href="/community/notice">공지사항</Link>
@@ -66,70 +67,9 @@ const Gnb = () => {
             <a href="#">삽니다/팝니다</a>
           </li>
         </ul>
-      </SubMenu>
-    </Wrapper>
+      </div>
+    </nav>
   );
 };
 
 export default Gnb;
-
-const Wrapper = styled.nav`
-  width: 100%;
-  height: ${GNB_HEIGHT}px;
-  margin-bottom: 40px;
-`;
-
-const SubMenu = styled.div<{ $isDimmedOpen: boolean }>`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  transition: all 0.3s ease;
-  height: ${(props) => (props.$isDimmedOpen ? "240px" : 0)};
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-  ul {
-    width: 100%;
-    text-align: center;
-    padding: 4px 0;
-
-    a {
-      padding: 8px;
-    }
-  }
-
-  a {
-    display: block;
-    color: #7d7d7d;
-    font-weight: bold;
-    font-size: 15px;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-`;
-
-const MainMenu = styled.ul`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-  height: inherit;
-  background-color: rgba(0, 0, 0, 0.9);
-
-  & > li {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    line-height: ${GNB_HEIGHT}px;
-  }
-
-  & > li > a {
-    color: #fff;
-    font-weight: bold;
-    font-size: 17px;
-  }
-`;

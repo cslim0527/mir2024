@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styles from "./Board.module.scss";
 import useBoard from "./hooks/useBoard";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
@@ -40,7 +40,7 @@ export default function Board() {
   };
 
   return (
-    <Wrapper onSubmit={handleSubmit}>
+    <form className={styles["board-form"]} onSubmit={handleSubmit}>
       <input
         type="text"
         className="subject"
@@ -65,36 +65,6 @@ export default function Board() {
           작성
         </button>
       </div>
-    </Wrapper>
+    </form>
   );
 }
-
-const Wrapper = styled.form`
-  padding: 16px;
-  background-color: #fff;
-
-  input {
-    height: 40px;
-    width: 100%;
-    font-size: 14px;
-    padding: 7px 14px;
-    border: 1px solid #ccc;
-  }
-
-  input:focus {
-    border-color: #333;
-    outline: 0;
-    border-width: 1px;
-  }
-
-  .subject {
-    margin-bottom: 10px;
-  }
-
-  .write-controls {
-    gap: 10px;
-    margin-top: 16px;
-    display: flex;
-    justify-content: flex-end;
-  }
-`;

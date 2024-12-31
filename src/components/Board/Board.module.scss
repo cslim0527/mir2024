@@ -1,0 +1,29 @@
+.board-form {
+  padding: 16px;
+  background-color: #fff;
+
+  input {
+    height: 40px;
+    width: 100%;
+    font-size: 14px;
+    padding: 7px 14px;
+    border: 1px solid #ccc;
+  }
+
+  input:focus {
+    border-color: #333;
+    outline: 0;
+    border-width: 1px;
+  }
+
+  .subject {
+    margin-bottom: 10px;
+  }
+
+  .write-controls {
+    gap: 10px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

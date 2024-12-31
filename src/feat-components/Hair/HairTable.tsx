@@ -1,12 +1,10 @@
 "use client";
 
-import styled from "styled-components";
 import { ifErrorNoImg } from "@/src/utils/common";
-import Image from "next/image";
 
 const HairTable = () => {
   return (
-    <Table>
+    <div className="table">
       <thead>
         <tr>
           <th>번호</th>
@@ -29,7 +27,13 @@ const HairTable = () => {
                 />
               </td>
               <td>머리모양 {index}</td>
-              <td className="hair-view">
+              <td
+                className="hair-view"
+                style={{
+                  background: `url("/assets/images/hair/hair_bg.png") repeat`,
+                  backgroundSize: "50px 50px",
+                }}
+              >
                 <img
                   src={`/assets/images/hair/female/${index}.gif`}
                   alt=""
@@ -39,35 +43,8 @@ const HairTable = () => {
             </tr>
           ))}
       </tbody>
-    </Table>
+    </div>
   );
 };
 
 export default HairTable;
-
-const Table = styled.table`
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  tr {
-    border: 1px solid #efefef;
-  }
-
-  th {
-    padding: 8px;
-    font-size: 14px;
-    color: #6f6863;
-    background-color: #efeeee;
-  }
-
-  td {
-    padding: 10px 8px;
-    font-size: 14px;
-    color: #6f6863;
-
-    &.hair-view {
-      background: url("/assets/images/hair/hair_bg.png") repeat;
-      background-size: 50px 50px;
-    }
-  }
-`;

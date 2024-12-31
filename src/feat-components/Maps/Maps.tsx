@@ -1,11 +1,10 @@
 "use client";
 
-import styled from "styled-components";
 import { useMaps } from "./hooks/useMaps";
 import Portal from "@/src/components/Portal";
 import Dimmed from "@/src/components/Dimmed";
 import { ifErrorNoImg } from "@/src/utils/common";
-import Image from "next/image";
+import styles from "./Maps.module.scss";
 
 interface CastleModalProps {
   src?: string;
@@ -15,35 +14,18 @@ interface CastleModalProps {
 const CastleModal = ({ src, handleToggleModal }: CastleModalProps) => {
   if (!src) return null;
   return (
-    <Modal>
-      <CloseButton type="button" onClick={() => handleToggleModal(false)}>
+    <article className={styles.modal}>
+      <button
+        className="close-button"
+        type="button"
+        onClick={() => handleToggleModal(false)}
+      >
         그만보기
-      </CloseButton>
+      </button>
       <img src={src} alt="" onError={(e) => ifErrorNoImg(e, [700, 470])} />
-    </Modal>
+    </article>
   );
 };
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: -40px;
-  right: 0;
-  background: none;
-  border: 0;
-  outline: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-`;
-
-const Modal = styled.div`
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-`;
 
 const Maps = () => {
   const { handleClick, castleSrc, isModalOpen, handleToggleModal } = useMaps();
@@ -61,14 +43,14 @@ const Maps = () => {
           </>
         )}
       </Portal>
-      <FullMap>
-        <Title>전체지도</Title>
+      <div className={styles["full-map"]}>
+        <div className="title">전체지도</div>
 
         <div className="maps">
-          <SubTitle>
+          <div className="sub-title">
             비천성, 농안성, 남소성,백암성, 장백성, 마계성을 클릭하시면 성내부
             지도를 확인 할 수 있습니다.
-          </SubTitle>
+          </div>
           <img src="/assets/images/maps/full_map.gif" useMap="#image-map" />
 
           <map name="image-map" onClick={handleClick}>
@@ -122,33 +104,9 @@ const Maps = () => {
             />
           </map>
         </div>
-      </FullMap>
+      </div>
     </>
   );
 };
 
 export default Maps;
-
-const Title = styled.div`
-  color: #fff;
-  font-size: 20px;
-  padding: 20px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-`;
-
-const FullMap = styled.div`
-  text-align: center;
-  width: 800px;
-  margin: 0 auto;
-`;
-
-const SubTitle = styled.p`
-  text-align: left;
-  background-color: #fff;
-  font-size: 12px;
-  padding: 3px;
-  padding-left: 12px;
-  color: #111;
-`;

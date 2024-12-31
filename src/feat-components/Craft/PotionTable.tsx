@@ -1,13 +1,11 @@
 "use client";
 
-import styled from "styled-components";
 import { ifErrorNoImg } from "@/src/utils/common";
 import { POTION_DATA } from "@/src/data/craft";
-import Image from "next/image";
 
 const PotionTable = () => {
   return (
-    <Table>
+    <table className="table">
       <thead>
         <tr>
           <th>이미지</th>
@@ -30,30 +28,8 @@ const PotionTable = () => {
           </tr>
         ))}
       </tbody>
-    </Table>
+    </table>
   );
 };
 
 export default PotionTable;
-
-const Table = styled.table`
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  tr {
-    border: 1px solid #efefef;
-  }
-
-  th {
-    padding: 8px;
-    font-size: 14px;
-    color: #6f6863;
-    background-color: #efeeee;
-  }
-
-  td {
-    padding: 10px 8px;
-    font-size: 14px;
-    color: #6f6863;
-  }
-`;

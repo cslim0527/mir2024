@@ -1,13 +1,11 @@
 "use client";
 
 import { MONSTER_DATA } from "@/src/data/monster";
-import { comma, ifErrorNoImg } from "@/src/utils/common";
-import Image from "next/image";
-import styled from "styled-components";
+import { ifErrorNoImg } from "@/src/utils/common";
 
 const MonsterTable = () => {
   return (
-    <Table>
+    <table className="table">
       <thead>
         <tr>
           <th>이미지</th>
@@ -32,42 +30,42 @@ const MonsterTable = () => {
           </tr>
         ))}
       </tbody>
-    </Table>
+    </table>
   );
 };
 
 export default MonsterTable;
 
-const Table = styled.table`
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-  tr {
-    border: 1px solid #efefef;
-  }
+// const Table = styled.table`
+//   width: 100%;
+//   text-align: center;
+//   border-collapse: collapse;
+//   tr {
+//     border: 1px solid #efefef;
+//   }
 
-  th {
-    padding: 8px;
-    font-size: 14px;
-    color: #6f6863;
-    background-color: #efeeee;
+//   th {
+//     padding: 8px;
+//     font-size: 14px;
+//     color: #6f6863;
+//     background-color: #efeeee;
 
-    &:first-child {
-      width: 160px;
-    }
+//     &:first-child {
+//       width: 160px;
+//     }
 
-    &:nth-child(2) {
-      width: 140px;
-    }
-  }
+//     &:nth-child(2) {
+//       width: 140px;
+//     }
+//   }
 
-  td {
-    padding: 10px 8px;
-    font-size: 14px;
-    color: #6f6863;
+//   td {
+//     padding: 10px 8px;
+//     font-size: 14px;
+//     color: #6f6863;
 
-    &.name {
-      font-weight: bold;
-    }
-  }
-`;
+//     &.name {
+//       font-weight: bold;
+//     }
+//   }
+// `;
